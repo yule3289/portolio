@@ -58,9 +58,15 @@ body.on header .nav_wrap .nav{
     opacity: 1;
 }
 header .nav_wrap .nav li a{
-    color: #fff;
-    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
     font-weight: 500;
+    position:relative;
+    transition: all 0.3s ease-in-out;
+}
+
+header .nav_wrap .nav li a:hover {
+color: rgba(255, 255, 255, 1);
 }
 /* 네비 메뉴 아이콘 */
 header .nav_wrap div{
@@ -121,56 +127,59 @@ main .inner .main_title{
 }
 /* 메인 동그라미 */
 main .inner .one{
-    width: 436px;
-    height: 436px;
+    width: 300px;
+    height: 300px;
     border-radius: 100%;
     background: #6ABDFF;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-left: -377px;
-    top: 180px;
+    margin-left: -550px;
+    top: 100px;
     opacity: 0;
     
 }
 main .inner .two{
-    width: 183px;
-    height: 183px;
+    width: 100px;
+    height: 100px;
     border-radius: 100%;
     background: #F0F8FF;
     position: absolute;
     right: 170px;
-    bottom: 160px;
+    bottom: 210px;
     opacity: 0;
 }
 main .inner .three{
-    width: 160px;
-    height: 160px;
+    width: 90px;
+    height: 90px;
     border-radius: 100%;
     background: #D4EBFF;
     position: absolute;
     right: 100px;
-    bottom: 220px;
+    bottom: 270px;
     opacity: 0;
 }
 /* section */
 /* about */
 /* contact title */
 #about,
+#design,
 #contact
 {
     width: 100%;
     height: 100vh;
 }
 #about .inner,
+#design .inner,
 #contact .inner
 {
     width: 1400px;
     height: 100%;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 70px;
 }
 #about .inner .subtitle,
+#design .inner .subtitle,
 #contact .inner .subtitle{
     width: 100%;
     height: 131px;
@@ -178,6 +187,7 @@ main .inner .three{
     position: relative;
 }
 #about .inner .subtitle h2,
+#design .inner .subtitle h2,
 #contact .inner .subtitle h2{
     color: #6ABDFF;
     font-size: 56px;
@@ -187,14 +197,24 @@ main .inner .three{
     left: 80px;
     transform: translateY(-50%);
 }
-#about .inner .subtitle h2::after,
+#about .inner .subtitle h2::after{
+    content: '';
+    width: 250px;
+    height: 1px;
+    background: #6ABDFF;
+    position: absolute;
+    left: 230px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#design .inner .subtitle h2::after,
 #contact .inner .subtitle h2::after{
     content: '';
     width: 250px;
     height: 1px;
     background: #6ABDFF;
     position: absolute;
-    left: 250px;
+    left: 300px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -203,14 +223,16 @@ main .inner .three{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    /* margin-top: 40px; */
+    padding: 50px;
     gap: 140px;
 }
 /* 프로필사진 */
 #about .inner .about_wrap .profile{
     background: #ddd;
-    width: 430px;
-    height: 540px;
+    width: 300px;
+    height: 400px;
+    margin-top: -80px;
 }
 /* 프로필 텍스트 */
 #about .inner .about_wrap .profile_txt{
@@ -252,75 +274,83 @@ main .inner .three{
     height: 36px;
 }
 /* work */
-#work{
-    width: 100%;
-}
-#work .txt_effect_wrap{
-    position: relative;
+#text{
     width: 100%;
     height: 100vh;
+    position: relative;
 }
-#work .txt_effect_wrap .txt_effect{
+#text .txt_effect_wrap{
+    width: 100%;
+    padding-top: 60px;
+}
+#text .txt_effect_wrap .txt_effect{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 200px;
     font-style: normal;
     font-weight: 700;
 }
-#work .txt_personal{
-    transform: rotate(-3.141deg);
+#text .txt_personal{
     line-height: 0.8;
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 180px;
-    font-style: normal;
+    font-size: 100px;
     font-weight: 700;
     position: absolute;
-    left: 250px;
-    top: 50px;
+    left: 100px;
+    top: 60px;
     z-index: 6;
+    opacity: 0;
+    animation-delay: 2;
 }
-#work .txt_publishing{
+#text .txt_publishing{
     color: #A7D8FF;
     position: absolute;
-    left: 500px;
-    top: 300px;
+    left: 600px;
+    top: 200px;
     z-index: 5;
+    opacity: 0;
+    font-size:150px;
+    animation-delay: 1.5;
 }
-#work .txt_design{
-    transform: rotate(11.288deg);
+#text .txt_design{
     color: #D4EBFF;
     position: absolute;
     right: 100px;
-    top: 530px;
+    top: 370px;
     z-index: 4;
+    opacity: 0;
+    font-size:100px;
+    animation-delay: 1;
 }
-#work .txt_yule{
-    transform: rotate(1.618deg);
+#text .txt_yule{
     color: #6ABDFF;
     position: absolute;
-    left: 350px;
-    top: 550px;
+    left: 200px;
+    top: 380px;
     z-index: 2;
+    opacity: 0;
+    font-size:130px;
+    animation-delay: 0.5;
 }
-#work .txt_portfolio{
+#text .txt_portfolio{
     color: #A7D8FF;
-    transform: rotate(-3.484deg);
     position: absolute;
-    position: absolute;
-    left: 600px;
-    top:700px
+    left: 500px;
+    top:500px;
+    opacity: 0;
+    font-size:130px;
 }
 /* worklist */
 #work .publishing_list{
     width: 1400px;
     margin: auto;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     gap: 60px;
 }
 #work .publishing_list li.list{
     width: 1300px;
-    height: 700px;
+    height: 650px;
     margin: auto;
     border-radius: 48px;
     border: 1px solid rgba(255, 255, 255, 0.60);
@@ -329,27 +359,37 @@ main .inner .three{
     backdrop-filter: blur(15px);
     z-index: 10;
     padding: 30px;
+    opacity: 0.3;
+    transform: scale(0.9);
+    filter: blur(3px);
 }
 #work .publishing_list li.list h2{
     color: transparent;
     -webkit-text-stroke-width: 2px;
     font-size: 56px;
     font-weight: 700;
-    margin: 45px;
+    margin: 24px 16px;
 }
-/* 타이틀 색변경 */
-#work .publishing_list li.list1 h2{
-    -webkit-text-stroke-color: #0A2240;
+/* 색변경 */
+#work .publishing_list li.desktop h2{
+    -webkit-text-stroke-color: #6A89CC;
 }
-#work .publishing_list li.list2 h2{
-    -webkit-text-stroke-color: #366790;
+#work .publishing_list li.desktop .btn{
+    background: #6A89CC;
 }
-#work .publishing_list li.list3 h2{
-    -webkit-text-stroke-color: #9F72BB;
+#work .publishing_list li.responsive h2{
+    -webkit-text-stroke-color: #A3B899;
 }
-#work .publishing_list li.list4 h2{
-    -webkit-text-stroke-color: #ECBF16;
+#work .publishing_list li.responsive .btn{
+    background:#A3B899;
 }
+#work .publishing_list li.mobile h2{
+    -webkit-text-stroke-color: #F5C26B;
+}
+#work .publishing_list li.mobile .btn{
+    background: #F5C26B;
+}
+
 #work .publishing_list li.list .contents{
     display: flex;
     justify-content: center;
@@ -378,7 +418,9 @@ main .inner .three{
 #work .publishing_list li.list .contents .info .titwrap .imgbox{
     width: 160px;
 }
-#work .publishing_list li.list3 .contents .info .titwrap .imgbox{
+#work .publishing_list li.list .contents .info .titwrap .coffenlogo,
+#work .publishing_list li.list .contents .info .titwrap .hollyslogo
+{
     width: 100px;
 }
 #work .publishing_list li.list .contents .info .titwrap h3{
@@ -418,19 +460,112 @@ main .inner .three{
     margin-top: 24px;
     display: flex;
     gap: 24px;
-
 }
-#work .publishing_list button{
-    padding: 16px 24px;
-    color: #FFF;
+#work .publishing_list .btn{
     font-size: 16px;
     font-weight: 700;
     border-radius: 999px;
     background: rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+#work .publishing_list .btn a{
+    color: #fff;
+    display: block;
+    padding: 16px 24px;
+    width: 100%;
+    height: 100%;
+}
+#work .publishing_list .btn:hover{
+    opacity:0.8; 
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+/* design */
+#design .card_wrap{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 30px;
+}
+.card {
+    width: 25%;
+    height: 450px;
+    position: relative;
+    perspective: 1000px; /* 3D 효과 */
+}
+.card_content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.card:hover .card_content {
+    transform: rotateY(180deg); /* 호버 시 뒤집힘 */
+}
+.card_front, .card_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.card_front {
+    background: white;
+    overflow: hidden;
+}
+.card .haru img{
+    width: 100%;
+    height: auto;
+}
+.card_back{
+    padding: 16px;
+    background: #366790;
+    color: white;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.card_back h4{
+    font-size: 18px;
+    width: 100%;
+    padding: 16px 0;
+    position: relative;
+}
+.card_back h4::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.card_back ul.tool{
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 24px;
+}
+.card_back .info{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 /* contact */
 #contact .inner{
-    padding-top: 150px;
+    padding-top: 100px;
 }
 #contact .inner .catch{
     width: 100%;
@@ -438,7 +573,7 @@ main .inner .three{
     height: 278px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 24px;
 }
 #contact .inner .catch img{
     width: 400px;
@@ -466,7 +601,7 @@ main .inner .three{
     align-items: center;
     gap: 32px;
     color:#333;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 700;
 }
 #contact .inner ul li img{
